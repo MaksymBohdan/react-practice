@@ -42,6 +42,7 @@ function App() {
 }
 
 // export default withStorage(App);
+
 export default compose(
   withLog,
   withStorage
