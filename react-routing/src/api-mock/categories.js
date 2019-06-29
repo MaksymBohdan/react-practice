@@ -1,1 +1,1 @@
-export default ['all', 'sport', 'health', 'technology'];
+export default ['all', 'sports', 'health', 'technology'];
