@@ -1,9 +1,15 @@
 import { connect } from 'react-redux';
 import NoteFilter from './NoteFilter';
 
-const mapStateToProps = state => ({});
+import { noteActions, noteSelectors } from '../../modules/notes';
 
-const mapDispatchToProps = {};
+const mapStateToProps = state => ({
+  value: noteSelectors.getFilter(state)
+});
+
+const mapDispatchToProps = {
+  onChange: noteActions.onFilterChange
+};
 
 export default connect(
   mapStateToProps,
