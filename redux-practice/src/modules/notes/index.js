@@ -1,2 +1,3 @@
 export { default as noteActions } from './noteActions';
-export { default as noteSelectors } from './noteSelectors'
+export { default as noteOperations } from './noteOperations';
+export { default as noteSelectors } from './noteSelectors';
