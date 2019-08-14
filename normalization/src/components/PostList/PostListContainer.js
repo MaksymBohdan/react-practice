@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import PostListView from './PostListView';
 // import * as actions from '../../redux/actions';
-// import * as selectors from '../../redux/selectors';
+import { getPostsWithAuthor } from '../../redux/selectors';
 
 const mapState = state => ({
+    posts: getPostsWithAuthor(state)
 });
 
-const mapDispatch = {
-};
+const mapDispatch = {};
 
 export default connect(
-    mapState,
-    mapDispatch,
+  mapState,
+  mapDispatch
 )(PostListView);
