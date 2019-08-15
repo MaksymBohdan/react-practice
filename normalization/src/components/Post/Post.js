@@ -8,7 +8,7 @@ const Post = ({ image, title, body, onDelete }) => (
       <h2 className={s.title}>{title}</h2>
       <p className={s.body}>{body}</p>
 
-      <button onClick={() => console.log('delete')}>Delete</button>
+      <button onClick={onDelete}>Delete</button>
     </div>
   </article>
 );
