@@ -24,6 +24,18 @@ function amount(state = {}, { type, payload }) {
       return newState;
     }
 
+    case actionTypes.PLUS_ONE_ITEM:
+      return {
+        ...state,
+        [payload.id]: state[payload.id] + 1
+      };
+
+    case actionTypes.MINUS_ONE_ITEM:
+      return {
+        ...state,
+        [payload.id]: state[payload.id] > 0 ? state[payload.id] - 1 : 0
+      };
+
     default:
       return state;
   }
