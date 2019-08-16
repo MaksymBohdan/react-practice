@@ -5,7 +5,11 @@ import * as actions from '../../redux/actions';
 
 const mapState = state => ({ products: selectors.getCartProducts(state) });
 
-const mapDispatch = { removeFromCart: actions.removeFromCart };
+const mapDispatch = {
+  removeFromCart: actions.removeFromCart,
+  plusOneItem: actions.plusOneItem,
+  minusOneItem: actions.minusOneItem
+};
 
 export default connect(
   mapState,
