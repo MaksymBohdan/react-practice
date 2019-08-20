@@ -3,7 +3,7 @@ import Counter from '../Counter/Counter';
 import Form from '../Form/Form';
 import s from './App.module.css';
 
-const a: number = '3';
+const a: number = 3;
 
 console.log(a);
 const App = () => (
