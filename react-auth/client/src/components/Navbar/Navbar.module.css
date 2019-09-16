@@ -1,0 +1,13 @@
+.navbar {
+  padding: 10px;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: flex-end;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+.list > li {
+  padding: 5px;
+}
