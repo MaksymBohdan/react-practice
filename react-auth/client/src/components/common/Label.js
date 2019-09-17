@@ -1,8 +1,9 @@
 import React from 'react';
+import s from './Label.module.css'
 
 const Label = ({ text = '', children }) => (
-  <label className={classes.label}>
-    <span className={classes.text}>{text}</span>
+  <label className={s.label}>
+    <span className={s.text}>{text}</span>
     {children}
   </label>
 );

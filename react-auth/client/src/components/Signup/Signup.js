@@ -4,8 +4,9 @@ import Input from '../common/Input';
 import Button from '../common/Button';
 import Label from '../common/Label';
 
-class Signin extends Component {
+class Signup extends Component {
   state = {
+    name: '',
     email: '',
     password: ''
   };
@@ -19,26 +20,30 @@ class Signin extends Component {
     e.preventDefault();
 
     this.setState({
+      name: '',
       email: '',
       password: ''
     });
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, name } = this.state;
 
     return (
       <Form onSubmit={this.handleSubmit}>
+        <Label text='Name'>
+          <Input value={name} type='text' placeholder='user name' name='name' onChange={this.handleChange} />
+        </Label>
         <Label text='Email'>
           <Input value={email} type='text' placeholder='example@mail.com' name='email' onChange={this.handleChange} />
         </Label>
         <Label text='Password'>
           <Input value={password} type='password' placeholder='password' name='password' onChange={this.handleChange} />
         </Label>
-        <Button text='Sign in' type='submit' />
+        <Button text='Sign up' type='submit' />
       </Form>
     );
   }
 }
 
-export default Signin;
+export default Signup;
