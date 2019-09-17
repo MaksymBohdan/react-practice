@@ -4,8 +4,8 @@ import s from './Navbar.module.css'
 const Navbar = () => (
   <nav className={s.navbar}>
     <ul className={s.list}>
-      <li>LogIn</li>
-      <li>SignUp</li>
+      <li>Sign In</li>
+      <li>Sign Up</li>
     </ul>
   </nav>
 )
