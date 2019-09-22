@@ -8,8 +8,20 @@ export const actionTypes = {
 
   SIGN_IN_REQUEST: 'session/SIGN_IN_REQUEST',
   SIGN_IN_SUCCESS: 'session/SIGN_IN_SUCCESS',
-  SIGN_IN_ERROR: 'session/SIGN_IN_ERROR'
+  SIGN_IN_ERROR: 'session/SIGN_IN_ERROR',
+
+  REFRESH_CURRENT_USER_REQUEST: 'session/REFRESH_CURRENT_USER_REQUEST',
+  REFRESH_CURRENT_USER_SUCCESS: 'session/REFRESH_CURRENT_USER_SUCCESS'
 };
+
+export const refreshUserRequest = () => ({
+  type: actionTypes.REFRESH_CURRENT_USER_REQUEST
+});
+
+export const refreshUserSuccess = user => ({
+  type: actionTypes.REFRESH_CURRENT_USER_SUCCESS,
+  payload: user
+});
 
 export const signUpRequest = () => ({
   type: actionTypes.SIGN_UP_REQUEST
