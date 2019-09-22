@@ -3,6 +3,8 @@ import Form from '../common/Form';
 import Input from '../common/Input';
 import Button from '../common/Button';
 import Label from '../common/Label';
+import { connect } from 'react-redux';
+import { signIn } from '../../redux/operations';
 
 class Signin extends Component {
   state = {
@@ -17,6 +19,8 @@ class Signin extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    this.props.onSubmit(this.state);
 
     this.setState({
       email: '',
@@ -41,4 +45,11 @@ class Signin extends Component {
   }
 }
 
-export default Signin;
+const MDTP = {
+  onSubmit: signIn
+};
+
+export default connect(
+  null,
+  MDTP
+)(Signin);
