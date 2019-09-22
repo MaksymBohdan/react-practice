@@ -3,6 +3,8 @@ import Form from '../common/Form';
 import Input from '../common/Input';
 import Button from '../common/Button';
 import Label from '../common/Label';
+import { connect } from 'react-redux';
+import { signUp } from '../../redux/operations';
 
 class Signup extends Component {
   state = {
@@ -18,7 +20,8 @@ class Signup extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
+    this.props.onSubmit(this.state);
+    
     this.setState({
       name: '',
       email: '',
@@ -46,4 +49,11 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+const MDTP = {
+  onSubmit: signUp
+};
+
+export default connect(
+  null,
+  MDTP
+)(Signup);

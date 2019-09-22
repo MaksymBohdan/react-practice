@@ -58,7 +58,7 @@ router.post('/signin', (req, res) => {
 
 router.post('/signout', (req, res) => {
   const t = req.headers.authorization;
-  const decoded = token.verify(t);
+  const decoded = token.verify(`Bearer ${t}`);
 
   if (decoded) {
     // Все классно, удаляем токен из редиски или leveldb или еще откуда
