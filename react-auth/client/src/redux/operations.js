@@ -75,12 +75,6 @@ const refreshCurrentUser = () => async (dispatch, getState) => {
 
     setAuthHeader(token);
 
-    // const configs = {
-    //   headers: {
-    //     Authorization: `Bearer ${token}`
-    //   }
-    // };
-
     const { data } = await axios.get('/auth/current');
 
     setAuthHeader(token);
