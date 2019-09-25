@@ -5,6 +5,7 @@ import Button from '../common/Button';
 import Label from '../common/Label';
 import { connect } from 'react-redux';
 import { signUp } from '../../redux/operations';
+import withAuthRedirect from '../hoc/withAuthRedirect';
 
 class Signup extends Component {
   state = {
@@ -21,7 +22,7 @@ class Signup extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
-    
+
     this.setState({
       name: '',
       email: '',
@@ -53,7 +54,9 @@ const MDTP = {
   onSubmit: signUp
 };
 
-export default connect(
-  null,
-  MDTP
-)(Signup);
+export default withAuthRedirect(
+  connect(
+    null,
+    MDTP
+  )(Signup)
+);
